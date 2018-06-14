@@ -1,0 +1,84 @@
+{
+  "run": [
+    {
+      "filePath": "/webapp/index.html",
+      "previewMode": 1,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": "1.44.25",
+      "isDefaultVersion": 1,
+      "urlParameters": [
+        {
+          "paramName": "Wiid",
+          "paramValue": "000001358256"
+        }
+      ],
+      "hashParameter": "",
+      "backendSystem": [
+        {
+          "source": "devgateway",
+          "destinations": "devgateway"
+        }
+      ],
+      "urlParametersNotNeeded": false,
+      "_metadata": {
+        "id": 9320261,
+        "runnerId": "webapprunner",
+        "displayName": "Run index.html 1",
+        "lastRunTimeStamp": 1528917383514
+      }
+    },
+    {
+      "filePath": "/webapp/index.html",
+      "previewMode": 1,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": "1.44.25",
+      "isDefaultVersion": 1,
+      "urlParameters": [
+        {
+          "paramName": "Wiid",
+          "paramValue": "000001355017"
+        }
+      ],
+      "hashParameter": "",
+      "backendSystem": [
+        {
+          "source": "devgateway",
+          "destinations": "devgateway"
+        }
+      ],
+      "urlParametersNotNeeded": false,
+      "_metadata": {
+        "id": 9373852,
+        "runnerId": "webapprunner",
+        "displayName": "Copy of Run index.html 1",
+        "lastRunTimeStamp": 1528429119341
+      }
+    },
+    {
+      "filePath": "/webapp/index.html",
+      "previewMode": 1,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": null,
+      "ui5VerSource": null,
+      "isDefaultVersion": 0,
+      "urlParameters": [
+        {
+          "paramName": "",
+          "paramValue": ""
+        }
+      ],
+      "hashParameter": "",
+      "backendSystem": [],
+      "urlParametersNotNeeded": false,
+      "_metadata": {
+        "id": 7485004,
+        "runnerId": "webapprunner",
+        "displayName": "Run index.html",
+        "lastRunTimeStamp": 1525110319775
+      }
+    }
+  ]
+}

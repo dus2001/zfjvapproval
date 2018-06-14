@@ -1,0 +1,25 @@
+{
+  "generation": [
+    {
+      "templateId": "servicecatalog.connectivityComponent",
+      "templateVersion": "0.0.0",
+      "dateTimeStamp": "Fri, 27 Apr 2018 14:33:20 GMT"
+    }
+  ],
+  "mockpreview": {
+    "mockUri": "/sap/opu/odata/sap/ZFJV_APPROVE_SRV",
+    "metadataFilePath": "",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  },
+  "dataBinding": {
+    "/webapp/view/S3.view.xml": {
+      "entitySet": "/TaskDtlSet"
+    }
+  },
+  "deploy": {
+    "destination": "devgateway",
+    "name": "ZFJV_APPROVAL"
+  }
+}
