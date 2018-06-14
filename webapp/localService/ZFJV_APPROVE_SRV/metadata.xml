@@ -1,0 +1,87 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZFJV_APPROVE_SRV" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="TaskDtl" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Wiid"/>
+                </Key>
+                <Property Name="Wiid" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="WiText" Type="Edm.String" Nullable="false" MaxLength="120" sap:label="Work item text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OwnTask" Type="Edm.Boolean" Nullable="false" sap:label="Indicator" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="WiStat" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ausbk" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Source comp.cde" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Belnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Document Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Gjahr" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Fiscal Year" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Usnam" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="User Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Blart" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Document type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ltext003t" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bldat" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="Document Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Budat" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="Posting Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Monat" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Period" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bktxt" Type="Edm.String" Nullable="false" MaxLength="25" sap:label="Doc.Header Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Xblnr" Type="Edm.String" Nullable="false" MaxLength="16" sap:label="Reference" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Totamt" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:label="Amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Waers" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <NavigationProperty Name="TaskDtl_Lines" Relationship="ZFJV_APPROVE_SRV.TaskDtl_Lines" FromRole="FromRole_TaskDtl_Lines" ToRole="ToRole_TaskDtl_Lines"/>
+            </EntityType>
+            <EntityType Name="TaskLine" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Wiid"/>
+                    <PropertyRef Name="Buzei"/>
+                </Key>
+                <Property Name="Wiid" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Buzei" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Line item" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Company Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kblnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Earmarked Funds" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Hkont" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="G/L" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fundwbs" Type="Edm.String" Nullable="false" MaxLength="24" sap:label="WBS element" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fundwbstxt" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Geber" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Fund" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Projk" Type="Edm.String" Nullable="false" MaxLength="24" sap:label="WBS element" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fistl" Type="Edm.String" Nullable="false" MaxLength="16" sap:label="Funds center" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Xref1" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Reference Key 1" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Aufnr" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Order" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Personnel No." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kblpos" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Document item" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sgtxt" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Txt20Skat" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Short Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FundBeschr" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="GmProgramText" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Program Desc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FcBeschr" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zeile" Type="Edm.String" Nullable="false" MaxLength="132" sap:label="1st line" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Wrbtr" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:label="Amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Waers" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Shkzg" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Debit/Credit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZjvAppGrp" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="JV Approval App Lines Grouping" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="TaskDtl_Lines" sap:content-version="1">
+                <End Type="ZFJV_APPROVE_SRV.TaskDtl" Multiplicity="1" Role="FromRole_TaskDtl_Lines"/>
+                <End Type="ZFJV_APPROVE_SRV.TaskLine" Multiplicity="*" Role="ToRole_TaskDtl_Lines"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_TaskDtl_Lines">
+                        <PropertyRef Name="Wiid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_TaskDtl_Lines">
+                        <PropertyRef Name="Wiid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZFJV_APPROVE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="TaskDtlSet" EntityType="ZFJV_APPROVE_SRV.TaskDtl" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="TaskLineSet" EntityType="ZFJV_APPROVE_SRV.TaskLine" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="TaskDtl_LinesSet" Association="ZFJV_APPROVE_SRV.TaskDtl_Lines" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="TaskDtlSet" Role="FromRole_TaskDtl_Lines"/>
+                    <End EntitySet="TaskLineSet" Role="ToRole_TaskDtl_Lines"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZFJV_APPROVE_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZFJV_APPROVE_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>
