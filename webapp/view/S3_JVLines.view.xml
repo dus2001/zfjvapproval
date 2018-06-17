@@ -15,7 +15,7 @@
 					<!--<ObjectIdentifier title="{path : 'Wrbtr'}" text="{Waers}" visible="true"/>-->
 					<ObjectNumber
 						number="{parts: [ {path: 'Wrbtr'}, {path: 'Waers'}], type : 'sap.ui.model.type.Currency', formatOptions: { showMeasure: false }}"
-						unit="{Waers}" state="{= ${Shkzg} === 'S' ? 'None' : 'Warning' }" textAlign="Initial"/>
+						unit="{Waers}" state="{= ${Shkzg} === 'S' ? 'None' : 'Warning' }"/>
 					<!--<ObjectNumber number="{path : 'Wrbtr'}" unit="{Waers}" visible="true" state="{= ${Shkzg} === 'S' ? 'None' : 'Warning' }" textAlign="Initial"/>-->
 				</cells>
 			</ColumnListItem>
@@ -60,9 +60,9 @@
 					<Label text="Cross CC" design="Bold"/>
 				</header>
 			</Column>
-			<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+			<Column width="auto" hAlign="End" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 				<header>
-					<Label text="Amount" design="Bold"/>
+					<Label text="Amount" design="Bold" textAlign="Center"/>
 				</header>
 			</Column>
 		</columns>
