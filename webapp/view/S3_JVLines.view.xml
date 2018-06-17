@@ -10,7 +10,7 @@
 					<ObjectIdentifier title="{Fundwbs}" text="{Fundwbstxt}" titleActive="false" visible="true"/>
 					<ObjectIdentifier title="{Xref1}" text="{Zeile}" titleActive="false" visible="true"/>
 					<ObjectIdentifier title="{Aufnr}" text="" titleActive="false" visible="true"/>
-					<ObjectIdentifier title="{Pernr}" text="" titleActive="false" visible="true"/>
+					<ObjectIdentifier title="{Pernr}" text="{Emnam}" titleActive="false" visible="true"/>
 					<ObjectIdentifier title="{Bukrs}" text="" titleActive="false" visible="true"/>
 					<!--<ObjectIdentifier title="{path : 'Wrbtr'}" text="{Waers}" visible="true"/>-->
 					<ObjectNumber
