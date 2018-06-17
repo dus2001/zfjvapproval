@@ -1,0 +1,17 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+	<Panel expandable="true" expanded="true" headerText="{i18n>wbsctq1}" width="auto" class="sapUiResponsiveMargin">
+		<content>
+			<Text text="{/ZwbsCstTrQ1}"/>
+		</content>
+	</Panel>
+	<Panel expandable="true" expanded="true" headerText="{i18n>wbsctq2}" width="auto" class="sapUiResponsiveMargin">
+		<content>
+			<Text text="{/ZwbsCstTrQ2}"/>
+		</content>
+	</Panel>
+	<Panel expandable="true" expanded="true" headerText="{i18n>wbsctq3}" width="auto" class="sapUiResponsiveMargin">
+		<content>
+			<Text text="{/ZwbsCstTrQ3}"/>
+		</content>
+	</Panel>
+</mvc:View>

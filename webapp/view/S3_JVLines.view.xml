@@ -1,0 +1,70 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" controllerName="edu.weill.cornell.wbg.fjv.approve.controller.S3_JVLines"
+	displayBlock="true">
+	<Table noDataText="No Data" id="ItemsList"
+		items="{ path : '/TaskDtl_Lines/results', sorter :{ path : 'ZjvAppGrp', descending: true, group : true } }">
+		<items>
+			<ColumnListItem>
+				<cells>
+					<ObjectIdentifier title="{Buzei}" text="{Sgtxt}" titleActive="false" visible="true"/>
+					<ObjectIdentifier title="{Hkont}" text="{Txt20Skat}" titleActive="false" visible="true"/>
+					<ObjectIdentifier title="{Fundwbs}" text="{Fundwbstxt}" titleActive="false" visible="true"/>
+					<ObjectIdentifier title="{Xref1}" text="{Zeile}" titleActive="false" visible="true"/>
+					<ObjectIdentifier title="{Aufnr}" text="" titleActive="false" visible="true"/>
+					<ObjectIdentifier title="{Pernr}" text="" titleActive="false" visible="true"/>
+					<ObjectIdentifier title="{Bukrs}" text="" titleActive="false" visible="true"/>
+					<!--<ObjectIdentifier title="{path : 'Wrbtr'}" text="{Waers}" visible="true"/>-->
+					<ObjectNumber
+						number="{parts: [ {path: 'Wrbtr'}, {path: 'Waers'}], type : 'sap.ui.model.type.Currency', formatOptions: { showMeasure: false }}"
+						unit="{Waers}" state="{= ${Shkzg} === 'S' ? 'None' : 'Warning' }" textAlign="Initial"/>
+					<!--<ObjectNumber number="{path : 'Wrbtr'}" unit="{Waers}" visible="true" state="{= ${Shkzg} === 'S' ? 'None' : 'Warning' }" textAlign="Initial"/>-->
+				</cells>
+			</ColumnListItem>
+		</items>
+		<columns>
+			<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+				<header>
+					<Label text="Item" design="Bold"/>
+				</header>
+			</Column>
+			<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+				<header>
+					<Label text="GL Account" design="Bold"/>
+				</header>
+			</Column>
+			<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+				<header>
+					<Label text="Fund/WBS" design="Bold"/>
+				</header>
+			</Column>
+			<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Desktop" demandPopin="false" popinDisplay="Inline"
+				visible="{TaskInfo>/colwbsorig}" mergeDuplicates="true">
+				<header>
+					<Label text="WBS Orig Doc" design="Bold"/>
+				</header>
+			</Column>
+			<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Desktop" demandPopin="false" popinDisplay="Inline"
+				visible="{TaskInfo>/colio}" mergeDuplicates="false">
+				<header>
+					<Label text="IO" design="Bold"/>
+				</header>
+			</Column>
+			<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Desktop" demandPopin="false" popinDisplay="Inline"
+				visible="{TaskInfo>/colpernr}" mergeDuplicates="false">
+				<header>
+					<Label text="Personnel No" design="Bold"/>
+				</header>
+			</Column>
+			<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Desktop" demandPopin="false" popinDisplay="Inline"
+				visible="{TaskInfo>/colbukrs}" mergeDuplicates="false">
+				<header>
+					<Label text="Cross CC" design="Bold"/>
+				</header>
+			</Column>
+			<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+				<header>
+					<Label text="Amount" design="Bold"/>
+				</header>
+			</Column>
+		</columns>
+	</Table>
+</mvc:View>
