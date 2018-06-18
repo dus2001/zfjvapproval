@@ -62,7 +62,7 @@ sap.ui.define([
 			var oTasksModel = this.getOwnerComponent().getModel("Tasks");
 			var mParams = {
 				urlParameters: {
-					"$expand": "TaskDtl_Lines,TaskDtl_Attach"
+					"$expand": "TASKDTL_WI,TaskDtl_Lines,TaskDtl_Attach"
 				},
 				success: function(oData) {
 					this._initTaskInfo(oData);
