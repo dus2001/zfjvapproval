@@ -7,12 +7,12 @@
 				<m:content class="sapUiResponsiveMargin">
 					<ObjectPageLayout useIconTabBar="true" upperCaseAnchorBar="false" subSectionLayout="TitleOnTop">
 						<headerTitle>
-							<ObjectPageHeader isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true" objectTitle="{/WiText}"
+							<ObjectPageHeader isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true" objectTitle="{JV>/WiText}"
 								objectSubtitle="{TaskInfo>/DocText}"></ObjectPageHeader>
 						</headerTitle>
 						<headerContent>
-							<m:ObjectStatus title="{i18n>hdrTxt}" text="{/Bktxt}"/>
-							<m:ObjectStatus title="{i18n>postingPeriod}" text="{/Zfiscalp}"/>
+							<m:ObjectStatus title="{i18n>hdrTxt}" text="{JV>/Bktxt}"/>
+							<m:ObjectStatus title="{i18n>postingPeriod}" text="{JV>/Zfiscalp}"/>
 							<!--							<layout:VerticalLayout class="sapUiResponsiveMargin" width="40%"/>
 							<layout:VerticalLayout class="sapUiResponsiveMargin">
 								<m:ObjectIdentifier title="Header Text" text="{/Bktxt}"/>

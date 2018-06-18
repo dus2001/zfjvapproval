@@ -67,7 +67,8 @@ sap.ui.define([
 				success: function(oData) {
 					this._initTaskInfo(oData);
 					var oModel = new JSONModel(oData);
-					this.getView().setModel(oModel);
+					// this.getView().setModel(oModel);
+					this.getView().setModel(oModel, "JV");
 					this.getView().setBusy(false);
 				}.bind(this),
 				error: function(oError) {
