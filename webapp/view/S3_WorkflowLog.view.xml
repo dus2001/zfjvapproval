@@ -17,7 +17,7 @@
 				<cells visible="{= !(${Zcreat} === '0')}">
 					<HBox>
 						<Text text="{Emnam}" visible="{= !(${Zcreat} === '0')}"/>
-						<Link text="Click here to see who can approve" press="handleShowApprovers" visible="{= ${Zcreat} === '0'}"/>
+						<Link text="{i18n>apprLinkText}" press="handleShowApprovers" visible="{= ${Zcreat} === '0'}"/>
 					</HBox>
 				</cells>
 				<cells>
@@ -33,16 +33,16 @@
 				<header><Label text=""/></header>
 			</Column>
 			<Column>
-				<header><Label text="Work Item Type"/></header>
+				<header><Label text="{i18n>aprTypeLbl}"/></header>
 			</Column>
 			<Column>
-				<header><Label text="Department"/></header>
+				<header><Label text="{i18n>apprDeptLbl}"/></header>
 			</Column>
 			<Column>
-				<header><Label text="Approver"/></header>
+				<header><Label text="{i18n>apprNameLbl}"/></header>
 			</Column>
 			<Column>
-				<header><Label text="Time"/></header>
+				<header><Label text="{i18n>apprTimeLabel}"/></header>
 			</Column>
 		</columns>
 	</Table>

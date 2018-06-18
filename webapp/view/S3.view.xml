@@ -1,46 +1,65 @@
-<core:View xmlns:m="sap.m" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form"
-	xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" controllerName="edu.weill.cornell.wbg.fjv.approve.controller.S3">
+<core:View xmlns:m="sap.m" xmlns="sap.uxap" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form"
+	xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic"
+	controllerName="edu.weill.cornell.wbg.fjv.approve.controller.S3">
 	<m:App>
 		<m:pages>
 			<m:Page title="{i18n>/title}" showHeader="false">
 				<m:content class="sapUiResponsiveMargin">
-					<ObjectHeader intro="{TaskInfo>/DocText}" title="{/WiText}"
-						number="{path: '/Totamt', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" numberUnit="{/Waers}" responsive="true"
-						fullScreenOptimized="false" backgroundDesign="Translucent" numberState="Success">
-						<attributes>
-							<ObjectAttribute text="{/Bktxt}" title="Header Text"/>
-							<ObjectAttribute text="{/Zfiscalp}" title="Posting Period"/>
-						</attributes>
-						<statuses/>
-					</ObjectHeader>
-					<IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true"
-						selectedKey="Ok" select="_onIconTabBarSelect">
-						<items>
-							<IconTabFilter text="{i18n>tabDDHdr}" id="DispData">
-								<content>
-									<mvc:XMLView viewName="edu.weill.cornell.wbg.fjv.approve.view.S3_JVLines"/>
-								</content>
-							</IconTabFilter>
-							<IconTabFilter text="{i18n>tabWBSCostTr}" count="" design="Vertical" showAll="false" textDirection="Inherit" enabled="true"
-								visible="{TaskInfo>/showWBS}" iconDensityAware="false" id="WBSCostTransfer">
-								<content>
-									<mvc:XMLView viewName="edu.weill.cornell.wbg.fjv.approve.view.S3_WBSCT"/>
-								</content>
-							</IconTabFilter>
-							<IconTabFilter text="{i18n>tabAttach}" count="" design="Vertical" showAll="false" textDirection="Inherit" enabled="true"
-								visible="{TaskInfo>/Attachments}" iconDensityAware="false" id="Attachments">
-								<content>
-									<mvc:XMLView viewName="edu.weill.cornell.wbg.fjv.approve.view.S3_Attach"/>
-								</content>
-							</IconTabFilter>
-							<IconTabFilter text="{i18n>tabWFLHdr}" count="" design="Vertical" showAll="false" textDirection="Inherit" enabled="true"
-								visible="{TaskInfo>/Workflowlog}" iconDensityAware="false" id="WorkFlowLog">
-								<content>
-									<mvc:XMLView viewName="edu.weill.cornell.wbg.fjv.approve.view.S3_WorkflowLog"/>
-								</content>
-							</IconTabFilter>
-						</items>
-					</IconTabBar>
+					<ObjectPageLayout useIconTabBar="true" upperCaseAnchorBar="false" subSectionLayout="TitleOnTop">
+						<headerTitle>
+							<ObjectPageHeader isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true" objectTitle="{/WiText}"
+								objectSubtitle="{TaskInfo>/DocText}"></ObjectPageHeader>
+						</headerTitle>
+						<headerContent>
+							<m:ObjectStatus title="{i18n>hdrTxt}" text="{/Bktxt}"/>
+							<m:ObjectStatus title="{i18n>postingPeriod}" text="{/Zfiscalp}"/>
+							<!--							<layout:VerticalLayout class="sapUiResponsiveMargin" width="40%"/>
+							<layout:VerticalLayout class="sapUiResponsiveMargin">
+								<m:ObjectIdentifier title="Header Text" text="{/Bktxt}"/>
+							</layout:VerticalLayout>
+							<layout:VerticalLayout class="sapUiResponsiveMargin">
+								<m:ObjectIdentifier title="Posting Period" text="{/Zfiscalp}"/>
+							</layout:VerticalLayout>-->
+						</headerContent>
+						<sections>
+							<ObjectPageSection id="jvLines" titleUppercase="false" title="{i18n>tabDDHdr}">
+								<subSections>
+									<ObjectPageSubSection title="">
+										<blocks>
+											<mvc:XMLView viewName="edu.weill.cornell.wbg.fjv.approve.view.S3_JVLines"/>
+										</blocks>
+									</ObjectPageSubSection>
+								</subSections>
+							</ObjectPageSection>
+							<ObjectPageSection id="WBSCostTransfer" titleUppercase="false" visible="{TaskInfo>/showWBS}" title="{i18n>tabWBSCostTr}">
+								<subSections>
+									<ObjectPageSubSection title="">
+										<blocks>
+											<mvc:XMLView viewName="edu.weill.cornell.wbg.fjv.approve.view.S3_WBSCT"/>
+										</blocks>
+									</ObjectPageSubSection>
+								</subSections>
+							</ObjectPageSection>
+							<ObjectPageSection id="Attachments" titleUppercase="false" title="{i18n>tabAttach}">
+								<subSections>
+									<ObjectPageSubSection title="">
+										<blocks>
+											<mvc:XMLView viewName="edu.weill.cornell.wbg.fjv.approve.view.S3_Attach"/>
+										</blocks>
+									</ObjectPageSubSection>
+								</subSections>
+							</ObjectPageSection>
+							<ObjectPageSection id="WorkFlowLog" titleUppercase="false" title="{i18n>tabWFLHdr}">
+								<subSections>
+									<ObjectPageSubSection title="">
+										<blocks>
+											<mvc:XMLView viewName="edu.weill.cornell.wbg.fjv.approve.view.S3_WorkflowLog"/>
+										</blocks>
+									</ObjectPageSubSection>
+								</subSections>
+							</ObjectPageSection>
+						</sections>
+					</ObjectPageLayout>
 				</m:content>
 			</m:Page>
 		</m:pages>
