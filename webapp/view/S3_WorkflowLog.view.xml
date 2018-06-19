@@ -1,29 +1,30 @@
 <mvc:View xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
 	controllerName="edu.weill.cornell.wbg.fjv.approve.controller.S3_WorkflowLog">
-	<Table noDataText="No Data" id="WFLog" items="{ path: 'JV>/TASKDTL_WI/results' , sorter : { path:'Zzstplvlkey' , group:true} }">
+	<Table noDataText="No Data" id="zzidWFLog" items="{ path: 'JVAppr>/results' , sorter : { path:'Zzstplvlkey' , group:true} }">
 		<items>
 			<ColumnListItem>
 				<cells width="3rem">
-					<core:Icon src="{ path: 'JV>Zjvwflvlst',formatter: '.formatter.WorkflowLogIcon'}"
-						tooltip="{ path: 'JV>Zjvwflvlst',formatter: '.formatter.WorkflowLogToolTip'}"/>
+					<core:Icon src="{ path: 'JVAppr>Zjvwflvlst',formatter: '.formatter.WorkflowLogIcon'}"
+						tooltip="{ path: 'JVAppr>Zjvwflvlst',formatter: '.formatter.WorkflowLogToolTip'}"/>
 				</cells>
 				<cells>
-					<Text text="{JV>Zjvapprtyt}"/>
+					<Text text="{JVAppr>Zjvapprtyt}"/>
 				</cells>
 				<cells>
-					<Text text="{JV>ZounameSD}"/>
+					<Text text="{JVAppr>ZounameSD}"/>
 				</cells>
-				<cells visible="{= !(${JV>Zcreat} === '0')}">
+				<cells visible="{= !(${JVAppr>Zcreat} === '0')}">
 					<HBox>
-						<Text text="{JV>Emnam}" visible="{= !(${JV>Zcreat} === '0')}"/>
-						<Link text="{i18n>apprLinkText}" press="handleShowApprovers" visible="{= ${JV>Zcreat} === '0'}"/>
+						<Text text="{JVAppr>Emnam}" visible="{= !(${JVAppr>Zcreat} === '0')}"/>
+						<Link text="{i18n>apprLinkText}" app:approvers="{JVAppr>ApproverSet}" press="handleShowApprovers" visible="{= ${JVAppr>Zcreat} === '0'}"/>
 					</HBox>
 				</cells>
 				<cells>
 					<!--<Text text="{ path:'Zcreat', formatter:'.formatter.formatTimeStamp'}"/>-->
 					<!--<Text text=" {path : 'Zcreat', type : new sap.ui.model.type.DateTime, formatOptions: { style : 'medium'}} "/>-->
 					<!--<Text text="{Zcreat}" visible="{= !(${Zcreat} == '0') }"/>-->
-					<Text text="{JV>ApproveAt}" visible="{= !(${JV>Zcreat} === '0')}"/>
+					<Text text="{JVAppr>ApproveAt}" visible="{= !(${JVAppr>Zcreat} === '0')}"/>
 				</cells>
 			</ColumnListItem>
 		</items>

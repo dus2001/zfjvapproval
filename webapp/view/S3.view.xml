@@ -8,18 +8,11 @@
 					<ObjectPageLayout useIconTabBar="true" upperCaseAnchorBar="false" subSectionLayout="TitleOnTop">
 						<headerTitle>
 							<ObjectPageHeader isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true" objectTitle="{JV>/WiText}"
-								objectSubtitle="{TaskInfo>/DocText}"></ObjectPageHeader>
+								objectSubtitle="{JV>/Blart}-{JV>/Ltext003t}"></ObjectPageHeader>
 						</headerTitle>
 						<headerContent>
 							<m:ObjectStatus title="{i18n>hdrTxt}" text="{JV>/Bktxt}"/>
 							<m:ObjectStatus title="{i18n>postingPeriod}" text="{JV>/Zfiscalp}"/>
-							<!--							<layout:VerticalLayout class="sapUiResponsiveMargin" width="40%"/>
-							<layout:VerticalLayout class="sapUiResponsiveMargin">
-								<m:ObjectIdentifier title="Header Text" text="{/Bktxt}"/>
-							</layout:VerticalLayout>
-							<layout:VerticalLayout class="sapUiResponsiveMargin">
-								<m:ObjectIdentifier title="Posting Period" text="{/Zfiscalp}"/>
-							</layout:VerticalLayout>-->
 						</headerContent>
 						<sections>
 							<ObjectPageSection id="jvLines" titleUppercase="false" title="{i18n>tabDDHdr}">

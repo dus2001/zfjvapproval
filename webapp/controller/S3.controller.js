@@ -62,7 +62,7 @@ sap.ui.define([
 			var oTasksModel = this.getOwnerComponent().getModel("Tasks");
 			var mParams = {
 				urlParameters: {
-					"$expand": "TASKDTL_WI,TaskDtl_Lines,TaskDtl_Attach"
+					"$expand": "TaskDtl_Lines,TaskDtl_Attach"
 				},
 				success: function(oData) {
 					this._initTaskInfo(oData);
@@ -80,10 +80,25 @@ sap.ui.define([
 			var taskurl = "/TaskDtlSet('" + Wiid + "')";
 			this.getView().setBusy(true);
 			oTasksModel.read(taskurl, mParams);
+			// Now read the workflow log for the work item (JV)
+			mParams = {
+				urlParameters: {
+					"$expand": "ApproverSet"
+				},
+				success: function(oData) {
+					var oModel = new JSONModel(oData);
+					this.getView().setModel(oModel, "JVAppr");
+				}.bind(this),
+				error: function(oError) {
+					MessageToast.show("Error Reading Task Workflow Log.");
+				}.bind(this)
+			};
+			taskurl = "/TaskDtlSet('" + Wiid + "')/TASKDTL_WI";
+			this.getView().setBusy(true);
+			oTasksModel.read(taskurl, mParams);
 		},
 		_initTaskInfo: function(oData) {
-			var showWBS, colfr, colio, colpernr, colwbsorig, colbukrs, bukrs, docdate, postdate, DocText;
-			DocText = oData.Blart + "-" + oData.Ltext003t;
+			var showWBS, colfr, colio, colpernr, colwbsorig, colbukrs, bukrs, docdate, postdate;
 			$.each(oData.TaskDtl_Lines.results, function(index, obj) {
 				if ((oData.Blart === "TR") && (String([obj.Projk]) !== "")) {
 					showWBS = "X";
@@ -117,11 +132,7 @@ sap.ui.define([
 				colfr: ((colfr === "X") ? true : false),
 				colbukrs: ((colbukrs === "X") ? true : false),
 				docdate: ((docdate === "X") ? true : false),
-				postdate: ((postdate === "X") ? true : false),
-				DocText: DocText,
-				text1: "Text1",
-				text2: "Text2",
-				text3: "Text3"
+				postdate: ((postdate === "X") ? true : false)
 			});
 			this.getView().setModel(oTaskInfo, "TaskInfo");
 			// Grouper function to be supplied as 3rd parm to Sorter

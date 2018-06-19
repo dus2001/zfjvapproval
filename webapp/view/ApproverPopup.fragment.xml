@@ -1,0 +1,28 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog id="apprvrPopup" title="Approver List" class="sapUiResponsiveMargin">
+		<Table items="{JVApprvrList>/results}" fixedLayout="false">
+			<items>
+				<ColumnListItem>
+					<cells>
+						<Text text="{JVApprvrList>Apprvr}"/>
+					</cells>
+					<cells>
+						<Link text="{JVApprvrList>Name}" enabled="{=${JVApprvrList>Email} !== '' }" app:email="{JVApprvrList>Email}" press="sendEmail"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+			<columns>
+				<Column>
+					<header><Label text="CWID"/></header>
+				</Column>
+				<Column>
+					<header><Label text="Approver Name"/></header>
+				</Column>
+			</columns>
+		</Table>
+		<buttons>
+			<Button text="Email All" press="sendEmailToAll"/>
+			<Button text="OK" press="onCloseDialog"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
