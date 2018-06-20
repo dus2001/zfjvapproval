@@ -1,6 +1,18 @@
 sap.ui.define([], function() {
 	"use strict";
 	return {
+		getApprovalIconColor: function(WorkItemState) {
+			switch (WorkItemState) {
+				case "N":
+					return "gray";
+				case "I":
+					return 'blue';
+				case "C":
+					return 'green';
+				default:
+					return 'red';
+			}
+		},
 		WorkflowLogIcon: function(WorkItemState) {
 			switch (WorkItemState) {
 				case "N":

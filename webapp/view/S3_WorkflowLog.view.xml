@@ -3,9 +3,11 @@
 	controllerName="edu.weill.cornell.wbg.fjv.approve.controller.S3_WorkflowLog">
 	<Table noDataText="No Data" id="zzidWFLog" items="{ path: 'JVAppr>/results' , sorter : { path:'Zzstplvlkey' , group:true} }">
 		<items>
-			<ColumnListItem>
-				<cells width="3rem">
-					<core:Icon src="{ path: 'JVAppr>Zjvwflvlst',formatter: '.formatter.WorkflowLogIcon'}"
+			<ColumnListItem app:apprst="{JVAppr>Zjvwflvlst}">
+				<!--</ColumnListItem>class="{= ${JVAppr>Zjvwflvlst} === 'N' ? 'grayout' : ''}">-->
+				<cells width="4rem">
+					<core:Icon color="{ path: 'JVAppr>Zjvwflvlst',formatter: '.formatter.getApprovalIconColor'}" size="1.5rem"
+						src="{ path: 'JVAppr>Zjvwflvlst',formatter: '.formatter.WorkflowLogIcon'}"
 						tooltip="{ path: 'JVAppr>Zjvwflvlst',formatter: '.formatter.WorkflowLogToolTip'}"/>
 				</cells>
 				<cells>
