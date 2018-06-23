@@ -12,6 +12,11 @@ sap.ui.define([
 		onInit: function() {
 			this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
 			var Wiid = "000001289554";
+			var oTaskInfo = {
+				appvis: false
+			};
+			var oModel = new JSONModel(oTaskInfo);
+			this.getView().setModel(oModel, "TaskInfo");
 			var compData = this.getOwnerComponent().getComponentData();
 			if (compData) {
 				if (compData.startupParameters) {
@@ -132,7 +137,8 @@ sap.ui.define([
 				colfr: ((colfr === "X") ? true : false),
 				colbukrs: ((colbukrs === "X") ? true : false),
 				docdate: ((docdate === "X") ? true : false),
-				postdate: ((postdate === "X") ? true : false)
+				postdate: ((postdate === "X") ? true : false),
+				appvis: true
 			});
 			this.getView().setModel(oTaskInfo, "TaskInfo");
 			// Grouper function to be supplied as 3rd parm to Sorter

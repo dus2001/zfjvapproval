@@ -5,7 +5,7 @@
 		<m:pages>
 			<m:Page title="{i18n>/title}" showHeader="false">
 				<m:content class="sapUiResponsiveMargin">
-					<ObjectPageLayout useIconTabBar="true" upperCaseAnchorBar="false" subSectionLayout="TitleOnTop">
+					<ObjectPageLayout useIconTabBar="true" upperCaseAnchorBar="false" subSectionLayout="TitleOnTop" visible="{TaskInfo>/appvis}">
 						<headerTitle>
 							<ObjectPageHeader isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true" objectTitle="{JV>/WiText}"
 								objectSubtitle="{JV>/Blart}-{JV>/Ltext003t}"></ObjectPageHeader>

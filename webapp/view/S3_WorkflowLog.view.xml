@@ -4,7 +4,6 @@
 	<Table noDataText="No Data" id="zzidWFLog" items="{ path: 'JVAppr>/results' , sorter : { path:'Zzstplvlkey' , group:true} }">
 		<items>
 			<ColumnListItem app:apprst="{JVAppr>Zjvwflvlst}">
-				<!--</ColumnListItem>class="{= ${JVAppr>Zjvwflvlst} === 'N' ? 'grayout' : ''}">-->
 				<cells width="4rem">
 					<core:Icon color="{ path: 'JVAppr>Zjvwflvlst',formatter: '.formatter.getApprovalIconColor'}" size="1.5rem"
 						src="{ path: 'JVAppr>Zjvwflvlst',formatter: '.formatter.WorkflowLogIcon'}"
@@ -16,7 +15,7 @@
 				<cells>
 					<Text text="{JVAppr>ZounameSD}"/>
 				</cells>
-				<cells visible="{= !(${JVAppr>Zcreat} === '0')}">
+				<cells>
 					<HBox>
 						<Text text="{JVAppr>Emnam}" visible="{= !(${JVAppr>Zcreat} === null)}"/>
 						<Link text="{i18n>apprLinkText}" app:approvers="{JVAppr>ApproverSet}" press="handleShowApprovers" visible="{= ${JVAppr>Zcreat} === null}"/>

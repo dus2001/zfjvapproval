@@ -12,11 +12,9 @@
 					<ObjectIdentifier title="{JV>Aufnr}" text="" titleActive="false" visible="true"/>
 					<ObjectIdentifier title="{JV>Emnam}" text="{JV>Pernr}" titleActive="false" visible="true"/>
 					<ObjectIdentifier title="{JV>Bukrs}" text="" titleActive="false" visible="true"/>
-					<!--<ObjectIdentifier title="{path : 'Wrbtr'}" text="{Waers}" visible="true"/>-->
 					<ObjectNumber
 						number="{parts: [ {path: 'JV>Wrbtr'}, {path: 'JV>Waers'}], type : 'sap.ui.model.type.Currency', formatOptions: { showMeasure: false }}"
 						unit="{JV>Waers}" state="{= ${JV>Shkzg} === 'S' ? 'None' : 'Warning' }"/>
-					<!--<ObjectNumber number="{path : 'Wrbtr'}" unit="{Waers}" visible="true" state="{= ${Shkzg} === 'S' ? 'None' : 'Warning' }" textAlign="Initial"/>-->
 				</cells>
 			</ColumnListItem>
 		</items>
