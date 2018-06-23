@@ -4,7 +4,6 @@
 	<Table noDataText="No Data" id="zzidWFLog" items="{ path: 'JVAppr>/results' , sorter : { path:'Zzstplvlkey' , group:true} }">
 		<items>
 			<ColumnListItem app:apprst="{JVAppr>Zjvwflvlst}">
-				<!--</ColumnListItem>class="{= ${JVAppr>Zjvwflvlst} === 'N' ? 'grayout' : ''}">-->
 				<cells width="4rem">
 					<core:Icon color="{ path: 'JVAppr>Zjvwflvlst',formatter: '.formatter.getApprovalIconColor'}" size="1.5rem"
 						src="{ path: 'JVAppr>Zjvwflvlst',formatter: '.formatter.WorkflowLogIcon'}"
@@ -18,15 +17,12 @@
 				</cells>
 				<cells visible="{= !(${JVAppr>Zcreat} === '0')}">
 					<HBox>
-						<Text text="{JVAppr>Emnam}" visible="{= !(${JVAppr>Zcreat} === '0')}"/>
-						<Link text="{i18n>apprLinkText}" app:approvers="{JVAppr>ApproverSet}" press="handleShowApprovers" visible="{= ${JVAppr>Zcreat} === '0'}"/>
+						<Text text="{JVAppr>Emnam}" visible="{= !(${JVAppr>Zcreat} === null)}"/>
+						<Link text="{i18n>apprLinkText}" app:approvers="{JVAppr>ApproverSet}" press="handleShowApprovers" visible="{= ${JVAppr>Zcreat} === null}"/>
 					</HBox>
 				</cells>
 				<cells>
-					<!--<Text text="{ path:'Zcreat', formatter:'.formatter.formatTimeStamp'}"/>-->
-					<!--<Text text=" {path : 'Zcreat', type : new sap.ui.model.type.DateTime, formatOptions: { style : 'medium'}} "/>-->
-					<!--<Text text="{Zcreat}" visible="{= !(${Zcreat} == '0') }"/>-->
-					<Text text="{JVAppr>ApproveAt}" visible="{= !(${JVAppr>Zcreat} === '0')}"/>
+					<Text text="{ path:'JVAppr>Zcreat', formatter:'.formatter.formatTimestamp'}"/>
 				</cells>
 			</ColumnListItem>
 		</items>

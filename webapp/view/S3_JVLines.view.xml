@@ -1,22 +1,20 @@
-<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" controllerName="edu.weill.cornell.wbg.fjv.approve.controller.S3_JVLines"
-	displayBlock="true">
+<mvc:View xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	controllerName="edu.weill.cornell.wbg.fjv.approve.controller.S3_JVLines" displayBlock="true">
 	<Table noDataText="No Data" id="ItemsList"
 		items="{ path : 'JV>/TaskDtl_Lines/results', sorter :{ path : 'ZjvAppGrp', descending: true, group : true } }">
-		<items>
+		<items app:zzgrpkey="{JV>ZjvAppGrpkey}">
 			<ColumnListItem>
 				<cells>
-					<ObjectIdentifier title="{JV>Buzei}" text="{JV>Sgtxt}" titleActive="false" visible="true"/>
-					<ObjectIdentifier title="{JV>Hkont}" text="{JV>Txt20Skat}" titleActive="false" visible="true"/>
-					<ObjectIdentifier title="{JV>Fundwbs}" text="{JV>Fundwbstxt}" titleActive="false" visible="true"/>
+					<ObjectIdentifier title="{JV>Sgtxt}" text="{JV>Buzei}" titleActive="false" visible="true"/>
+					<ObjectIdentifier title="{JV>Txt20Skat}" text="{JV>Hkont}" titleActive="false" visible="true"/>
+					<ObjectIdentifier title="{JV>Fundwbstxt}" text="{JV>Fundwbs}" titleActive="false" visible="true"/>
 					<ObjectIdentifier title="{JV>Xref1}" text="{JV>Zeile}" titleActive="false" visible="true"/>
 					<ObjectIdentifier title="{JV>Aufnr}" text="" titleActive="false" visible="true"/>
-					<ObjectIdentifier title="{JV>Pernr}" text="{JV>Emnam}" titleActive="false" visible="true"/>
+					<ObjectIdentifier title="{JV>Emnam}" text="{JV>Pernr}" titleActive="false" visible="true"/>
 					<ObjectIdentifier title="{JV>Bukrs}" text="" titleActive="false" visible="true"/>
-					<!--<ObjectIdentifier title="{path : 'Wrbtr'}" text="{Waers}" visible="true"/>-->
 					<ObjectNumber
 						number="{parts: [ {path: 'JV>Wrbtr'}, {path: 'JV>Waers'}], type : 'sap.ui.model.type.Currency', formatOptions: { showMeasure: false }}"
 						unit="{JV>Waers}" state="{= ${JV>Shkzg} === 'S' ? 'None' : 'Warning' }"/>
-					<!--<ObjectNumber number="{path : 'Wrbtr'}" unit="{Waers}" visible="true" state="{= ${Shkzg} === 'S' ? 'None' : 'Warning' }" textAlign="Initial"/>-->
 				</cells>
 			</ColumnListItem>
 		</items>
