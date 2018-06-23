@@ -18,15 +18,12 @@
 				</cells>
 				<cells visible="{= !(${JVAppr>Zcreat} === '0')}">
 					<HBox>
-						<Text text="{JVAppr>Emnam}" visible="{= !(${JVAppr>Zcreat} === '0')}"/>
-						<Link text="{i18n>apprLinkText}" app:approvers="{JVAppr>ApproverSet}" press="handleShowApprovers" visible="{= ${JVAppr>Zcreat} === '0'}"/>
+						<Text text="{JVAppr>Emnam}" visible="{= !(${JVAppr>Zcreat} === null)}"/>
+						<Link text="{i18n>apprLinkText}" app:approvers="{JVAppr>ApproverSet}" press="handleShowApprovers" visible="{= ${JVAppr>Zcreat} === null}"/>
 					</HBox>
 				</cells>
 				<cells>
-					<!--<Text text="{ path:'Zcreat', formatter:'.formatter.formatTimeStamp'}"/>-->
-					<!--<Text text=" {path : 'Zcreat', type : new sap.ui.model.type.DateTime, formatOptions: { style : 'medium'}} "/>-->
-					<!--<Text text="{Zcreat}" visible="{= !(${Zcreat} == '0') }"/>-->
-					<Text text="{JVAppr>ApproveAt}" visible="{= !(${JVAppr>Zcreat} === '0')}"/>
+					<Text text="{ path:'JVAppr>Zcreat', formatter:'.formatter.formatTimestamp'}"/>
 				</cells>
 			</ColumnListItem>
 		</items>
