@@ -67,7 +67,7 @@ sap.ui.define([
 			var oTasksModel = this.getOwnerComponent().getModel("Tasks");
 			var mParams = {
 				urlParameters: {
-					"$expand": "TaskDtl_Lines,TaskDtl_Attach"
+					"$expand": "TaskDtl_Lines"
 				},
 				success: function(oData) {
 					this._initTaskInfo(oData);
@@ -99,7 +99,18 @@ sap.ui.define([
 				}.bind(this)
 			};
 			taskurl = "/TaskDtlSet('" + Wiid + "')/TASKDTL_WI";
-			this.getView().setBusy(true);
+			oTasksModel.read(taskurl, mParams);
+			// Now read the attachments for the work item (JV)
+			mParams = {
+				success: function(oData) {
+					var oModel = new JSONModel(oData);
+					this.getView().setModel(oModel, "JVAtt");
+				}.bind(this),
+				error: function(oError) {
+					MessageToast.show("Error Reading Task Attachments.");
+				}.bind(this)
+			};
+			taskurl = "/TaskDtlSet('" + Wiid + "')/TaskDtl_Attach";
 			oTasksModel.read(taskurl, mParams);
 		},
 		_initTaskInfo: function(oData) {

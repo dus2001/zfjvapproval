@@ -1,12 +1,13 @@
 <mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
-	<UploadCollection id="UploadCollection" maximumFilenameLength="55" multiple="true" change="onChange" uploadButtonInvisible="true"
-		beforeUploadStarts="onBeforeUploadStarts" items="{ path : 'JV>/TaskDtl_Attach/results'}">
+	<UploadCollection id="UploadCollection" maximumFilenameLength="55" multiple="true" change="onChange" uploadEnabled="false"
+		beforeUploadStarts="onBeforeUploadStarts" items="{ path : 'JVAtt>/results'}">
 		<items>
-			<UploadCollectionItem contributor="{JV>AttachedBy}" documentId="{JV>documentId}" fileName="{JV>Filename}" fileSize="{JV>Filesize}" mimeType="{JV>mimetype}"
-				thumbnailUrl="{JV>thumbnailUrl}" url="{JV>Url}" visibleDelete="false" visibleEdit="false" enableEdit="false" enableDelete="false"
-				uploadedDate="{path: 'JV>AttachedAt', type: 'sap.ca.ui.model.type.DateTime', formatOptions: { style: 'short'}}" press="onDownloadItem">
+			<UploadCollectionItem documentId="{JVAtt>documentId}" fileName="{JVAtt>Filename}" mimeType="{JVAtt>mimetype}"
+				thumbnailUrl="{JVAtt>thumbnailUrl}" url="{JVAtt>Url}" visibleDelete="false" visibleEdit="false" enableEdit="false" enableDelete="false">
 				<attributes>
-					<ObjectAttribute title="{'Attached'}" text="{path : 'text', formatter : '.formatAttribute'}" active="{active}"/>
+					<ObjectAttribute title="{Attached'}" text="{path : 'text', formatter : '.formatAttribute'}" active="{JVAtt>active}"/>
+					<ObjectAttribute title="Attached By" text="{JVAtt>AttachedBy}" active="{JVAtt>active}"/>
+					<ObjectAttribute title="File Size" text="{JVAtt>Filesize}" active="false"/>
 				</attributes>
 			</UploadCollectionItem>
 		</items>
